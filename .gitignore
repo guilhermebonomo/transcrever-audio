@@ -4,3 +4,4 @@ temp_processing/
 *.pyc
 
 # Ignorar o ambiente virtual e arquivos temporários de processamento
+*_transcricao.txt
