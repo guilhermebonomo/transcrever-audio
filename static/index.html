@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcritor Voador - IA Local</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Transcritor IA</h1>
+            <p>Transcreva áudios e vídeos 100% locamente, com rapidez e de forma privada.</p>
+        </header>
+
+        <main>
+            <div class="upload-zone" id="drop-zone">
+                <div class="upload-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                    </svg>
+                </div>
+                <h2>Arraste seus arquivos aqui</h2>
+                <p>ou clique para selecionar (MP4, MP3, M4A, WAV...)</p>
+                <input type="file" id="file-input" multiple accept="audio/*,video/*">
+            </div>
+
+            <div id="file-list" class="file-list">
+                <!-- Arquivos carregados aparecerão dinamicamente aqui via app.js -->
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
