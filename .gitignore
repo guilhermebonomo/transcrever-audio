@@ -1,7 +1,20 @@
+# Python
 venv/
 __pycache__/
-temp_processing/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
 
-# Ignorar o ambiente virtual e arquivos temporários de processamento
+# Logs
+*.log
+
+# Dados e Temporários
+temp_processing/
 *_transcricao.txt
+.env
+
+# Sistema (Linux/macOS)
+.DS_Store
+.idea/
+.vscode/

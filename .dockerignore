@@ -1,0 +1,21 @@
+# Ignorar dependências e ambientes virtuais
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar dados e arquivos temporários
+temp_processing/
+*_transcricao.txt
+
+# Ignorar artefatos do sistema de controle de versão
+.git/
+.gitignore
+
+# Ignorar configurações de IDEs
+.vscode/
+.idea/
+
+# Ignorar variáveis de ambiente e arquivos sensíveis (se houver)
+.env

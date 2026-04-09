@@ -1,0 +1,18 @@
+services:
+  transcritor-ia:
+    build: .
+    container_name: transcritor-ia
+    ports:
+      - "8012:8000"
+    volumes:
+      # Cria um volume dedicado e contínuo para evitar baixar o modelo (como 'small') a cada recriação
+      - whisper_cache:/root/.cache/huggingface/hub
+      # Mapeia os arquivos temporários caso prefira depurar arquivos localmente (opcional)
+      - ./temp_processing:/app/temp_processing
+      # Caso você queira refletir atualizações no frontend sem precisar fazer docker compose build para isso, descomente abaixo:
+      - ./static:/app/static
+    restart: unless-stopped
+
+volumes:
+  whisper_cache:
+    name: transcritor-ia-whisper-cache

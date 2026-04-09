@@ -21,40 +21,82 @@ Um web-app minimalista, rápido e elegante para transcrever arquivos de áudio e
 
 ---
 
-## 🛠️ Como Instalar (Primeira Vez)
+## 🐳 Como Rodar Usando Docker (Recomendado)
 
-Se você acabou de clonar ou fazer download deste projeto, será necessário construir o "Cérebro" do ambiente para o Python (`venv`) e alimentar a receita de dependências:
+A forma mais robusta e "à prova de erros" de publicar e rodar este projeto é utilizando o **Docker**. O contêiner empacota o FFmpeg e o Python garantindo que funcione perfeitamente seja no seu computador pessoal ou em um servidor cloud.
 
-1. Abra seu Terminal e entre na pasta raiz deste projeto:
+1. Assegure-se de que você possui o [Docker e Docker Compose](https://docs.docker.com/engine/install/) instalados no seu sistema.
+2. Na pasta do projeto, suba a aplicação com um único comando:
    ```bash
-   cd transcrever-audio
+   docker compose up -d
+   # ou 'docker-compose up -d' caso esteja utilizando uma versão (v1) mais antiga do Docker 
    ```
-2. Crie uma pasta vazia para enclausurar suas instalações (Ambiente Virtual):
-   ```bash
-   python3 -m venv venv
-   ```
-3. Ative o ambiente fechado e mande instalar o manual de bibliotecas que preparamos:
-   ```bash
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+   *Caso você mude o código, pode rodar o executável de atualização que deixamos pronto: `./update.sh`*
 
-*Nota Extra: A primeira transcrição que você executar passará alguns bons minutos travada, pois é o instante onde o Hugging Face baixará o "peso matemático" neural do modelo Whisper (centenas de megabytes) no seu cache local para uso vitalício!*
+3. Entre no seu navegador e acesse a URL:
+   👉 **[http://localhost:8012](http://localhost:8012)**
+
+*Nota: ao usar o Docker, a porta padrão externa do projeto fica sendo a **8012**, para evitar conflitos na máquina alvo.*
+
+Para **parar o sistema** com o Docker, rode: `docker compose down` (ou `docker-compose down`).
 
 ---
 
-## 🚀 Como Rodar o Sistema
+## 🪟 Rodando no Windows
 
-Sempre que for necessário utilizar a aplicação, o processo é o de apenas um comando:
+Você pode rodar este projeto no Windows de duas maneiras:
 
-1. Em seu terminal Linux/Mac, apenas execute o script organizador:
+### 1. Via Docker (Recomendado)
+1. Instale o [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+2. Abra o terminal (PowerShell ou CMD) na pasta do projeto.
+3. Execute:
+   ```powershell
+   docker compose up -d
+   ```
+4. Acesse: **[http://localhost:8012](http://localhost:8012)**
+
+### 2. Manualmente (Local)
+1. Instale o **Python 3.10+** (marcando a opção "Add Python to PATH" no instalador).
+2. **FFmpeg no Windows**: 
+   - Recomendado baixar via **Chocolatey**: `choco install ffmpeg`
+   - Ou baixando o executável no site oficial [ffmpeg.org](https://ffmpeg.org/download.html), extraindo e adicionando a pasta `bin` às Variáveis de Ambiente do Sistema (PATH).
+3. Crie e ative o ambiente virtual:
+   ```powershell
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+4. Instale as dependências:
+   ```powershell
+   pip install -r requirements.txt
+   ```
+5. Inicie o servidor:
+   ```powershell
+   python main.py
+   ```
+   *(Nota: No Windows, use `python main.py` se o script .sh não funcionar no seu terminal)*
+
+---
+
+## 🛠️ Como Instalar e Rodar Manualmente no Linux/Mac (Para Desenvolvedores)
+
+Se você quiser treinar desenvolvimento puro ou rodar manualmente fora do Docker, crie um ambiente enclausurado de Python (`venv`):
+
+1. **Requisito do SO:** Instale o `ffmpeg` (`sudo apt install ffmpeg` ou `brew install ffmpeg`).
+2. Crie a pasta `venv` e ative-a:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+3. Instale o manual de bibliotecas que preparamos:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Execute o script organizador e acesse **[http://127.0.0.1:8000](http://127.0.0.1:8000)**:
    ```bash
    ./start_server.sh
    ```
-   *(Caso dê "permissão negada" pela primeira vez, rode `chmod +x start_server.sh`)*
 
-2. Entre no seu navegador (Google Chrome, Firefox, Safari) e acesse a URL:
-   [http://127.0.0.1:8000](http://127.0.0.1:8000)
+*Importante: A primeira transcrição que você executar passará alguns minutos "congelada", pois é o instante onde o Hugging Face baixará o modelo Whisper (centenas de megabytes) no seu cache.*
 
 ## 🔧 Personalização Técnica
 Para alterar o tamanho e assertividade da Inteligência Artificial do bot, acesse o arquivo `main.py` e procure a linha contendo `WhisperModel`. 
