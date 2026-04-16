@@ -2,6 +2,9 @@
 
 Um web-app minimalista, rápido e elegante para transcrever arquivos de áudio e vídeo de forma 100% local, privada e offline. Desenvolvido em **Python (FastAPI)** no backend e **HTML/CSS/JS (Vanilla)** no frontend.
 
+> **Por que essa ferramenta nasceu?** 📖
+> Muitos na comunidade pedem um transcritor de vídeo longo, para reuniões ou algo parecido. Eu mesmo tenho a demanda de pegar vídeos de clientes e transcrever. Como nós brasileiros temos que escolher nossas ferramentas para não soterrarmos em boletos faturados em dólar, com o intuito de economizar, nasceu então essa ferramenta.
+
 ## 🌟 Recursos
 - **100% Local e Seguro**: Seus arquivos nunca saem da sua máquina. Nenhuma API externa ou serviço em nuvem.
 - **Extração Inteligente de Áudio**: Suporta diversos arquivos de mídia (MP4, MKV, MP3, WAV, M4A). Envie um vídeo diretamente e o app irá separar apenas a trilha de áudio com o FFmpeg instantaneamente para evitar consumo de RAM.
