@@ -104,3 +104,7 @@ Você pode substituir a string por modelos oficiais originais:
 - `"tiny"` ou `"base"`: Transcrição incrivelmente rápida para máquinas modestas, mas pode errar pontuações menores.
 - `"small"`: O Padrão Ouro. Equilíbrio espetacular de RAM consumida vs. Qualidade do Texto.
 - `"medium"` ou `"large-v2"`: Extremamente refinados e assertivos para idiomas mesclados. Porém necessitam de bastante Memória RAM livre na sua máquina e poder de processamento.
+
+
+Gostou do projeto? Considere me pagar um café:
+☕ contato@guilhermebonomo.com
