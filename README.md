@@ -109,5 +109,5 @@ Você pode substituir a string por modelos oficiais originais:
 - `"medium"` ou `"large-v2"`: Extremamente refinados e assertivos para idiomas mesclados. Porém necessitam de bastante Memória RAM livre na sua máquina e poder de processamento.
 
 
-Gostou do projeto? Considere me pagar um café:
+Gostou do projeto? Considere me pagar um café! Chave Pix:
 ☕ contato@guilhermebonomo.com
